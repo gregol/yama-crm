@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, ApolloLink, HttpLink } from '@apollo/clien
 import { getItem } from '../modules/core/utils/CRMPersistData'
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:3010/api/graphql'
+  uri: process.env.GRAPHQL_API ?? 'http://localhost:3010/api/graphql'
 })
 
 const authLink = new ApolloLink((operation, forward) => {

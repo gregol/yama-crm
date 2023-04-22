@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getItem } from '../modules/core/utils/CRMPersistData'
 
-const baseURL = 'http://localhost:3010/api';
+const baseURL = process.env.REST_API ?? 'http://localhost:3010/api';
 
 // Define your axios instance with baseURL and headers
 const axiosInstance = axios.create({
